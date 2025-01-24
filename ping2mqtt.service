@@ -1,0 +1,17 @@
+[Unit]
+Description=ping2mqtt
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/environment.d/ping2mqtt.env
+Type=simple
+ExecStart=npm run start
+WorkingDirectory=/home/dietpi/workspace/ping2mqtt
+Restart=always
+TimeoutStartSec=0
+RestartSec=10s
+User=dietpi
+
+[Install]
+WantedBy=multi-user.target
+
